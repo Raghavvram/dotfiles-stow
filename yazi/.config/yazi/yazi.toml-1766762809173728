@@ -1,0 +1,80 @@
+# Yazi Configuration File
+
+[manager]
+# Ratio of columns in the layout (left, middle, right)
+ratio = [2, 2, 4]
+
+# Show hidden files (dotfiles)
+show_hidden = true
+
+# Sort directories first before files
+sort_dir_first = true
+
+# Sort files by alphabetical order
+sort_by = "alphabetical"
+
+# Display file size in the list mode
+linemode = "size"
+
+# Enable case-insensitive sorting
+case_insensitive = true
+
+# Include file extensions in sorting
+sort_with_extensions = true
+
+# Limit the number of files displayed
+max_files_displayed = 1000
+
+# Display file metadata
+show_metadata = true
+
+[preview]
+# Wrap text in the preview pane
+wrap = "yes"
+
+# Syntax highlighting for code files
+syntax_highlight = true
+
+# Enable image previews
+image_preview = true
+
+# Preview pane width
+preview_pane_width = 40
+
+[search]
+# Search mode: regex (regular expression) or simple
+search_mode = "regex"
+
+# Case-insensitive search
+ignore_case = true
+
+# Include hidden files in search
+search_hidden = true
+
+[filter]
+# Enable file filtering by type
+file_types = ["txt", "md", "pdf", "jpg", "png"]
+
+[theme]
+# Set the theme for the UI (light or dark)
+theme = "dark"
+
+# Customize UI colors
+background_color = "#1E1E1E"
+foreground_color = "#CCCCCC"
+highlight_color = "#FFD700"
+error_color = "#FF0000"
+
+[keybindings]
+# Custom keybindings for navigation and actions
+key_up = "k"
+key_down = "j"
+key_select = "enter"
+key_preview = "space"
+
+[notifications]
+# Enable desktop notifications
+enable_notifications = true
+
+# Notification duration in seconds
+notification_duration = 5

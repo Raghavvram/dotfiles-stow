@@ -1,0 +1,72 @@
+# Neovide configuration file
+
+# Control whether Neovide forks into a background process (default: false)
+fork = false
+
+# Set the window frame visibility
+frame = "full"
+
+# Specify if Neovide should hide the cursor when idle (default: true)
+idle = true
+
+# Set the window state to maximized (default: false)
+maximized = false
+
+# Path to the Neovim executable (found dynamically on $PATH if unset)
+# neovim-bin = "/usr/bin/nvim"
+
+# Enable or disable multigrid feature (default: false)
+no-multigrid = false
+
+# Enable sRGB color space (default: true)
+srgb = true
+
+# Enable tab bar (default: true)
+tabs = true
+
+# Automatically switch theme based on system settings (default: "auto")
+theme = "auto"
+
+# Hide the window title bar (default: true)
+title-hidden = true
+
+# Enable or disable vertical synchronization (default: true)
+vsync = true
+
+# Specify if running in Windows Subsystem for Linux (default: false)
+wsl = false
+
+# Font settings
+[font]
+# Set the normal font (default: Fira Code Nerd Font)
+normal = ["CodeNewRoman Nerd Font Mono"]
+# Set the font size
+size = 20.0
+# Set the font style to bold
+style = "Bold"
+
+# Enable transparency (default: false)
+transparency = true
+# Set the transparency amount (0.0 to 1.0)
+transparency_amount = 0.6
+# Set the background opacity (0.0 to 1.0)
+background_opacity = 0.6
+
+# Add padding around the text
+padding_top = 10
+padding_bottom = 10
+padding_left = 10
+padding_right = 10
+
+# Shortcuts and additional settings
+# Use 'Ctrl-s' to save
+# map <C-s> :w<CR>
+# Use 'Ctrl-q' to quit
+# map <C-q> :q<CR>
+# Use 'Ctrl-h' to split horizontally
+# map <C-h> :split<CR>
+# Use 'Ctrl-v' to split vertically
+# map <C-v> :vsplit<CR>
+# Use 'Ctrl-t' to open a new tab
+# map <C-t> :tabnew<CR>
+

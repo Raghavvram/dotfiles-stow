@@ -1,0 +1,187 @@
+# FIRST LINE/ROW: Info & Status
+# First param ─┌
+[username]
+format = " [╭─$user]($style)@"
+show_always = true
+style_root = "bold red"
+style_user = "bold red"
+
+# Second param
+[hostname]
+format = "[$hostname]($style) in "
+ssh_only = false
+style = "bold dimmed red"
+trim_at = "-"
+
+# Third param
+[directory]
+style = "bold purple"
+truncate_to_repo = true
+truncation_length = 0
+truncation_symbol = "repo: "
+
+# Fourth param
+[sudo]
+style = "bold yellow"
+symbol = " "
+
+# Version info
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+deleted = "x"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+style = "bold white"
+
+# Last param in the first line/row
+[cmd_duration]
+format = "took [$duration]($style)"
+min_time = 1
+style = "bold blue"
+
+# SECOND LINE/ROW: Prompt
+# Battery status
+[battery]
+charging_symbol = ""
+discharging_symbol = ""
+full_symbol = ""
+
+[[battery.display]]
+style = "bold red"
+threshold = 15
+
+[[battery.display]]
+style = "bold yellow"
+threshold = 50
+
+[[battery.display]]
+style = "bold green"
+threshold = 80
+
+# Time display
+[time]
+format = " 🕙 $time($style)\n"
+style = "bright-white"
+time_format = "%T"
+
+# Character display
+[character]
+error_symbol = " [×](bold red)"
+success_symbol = " [╰─λ](bold green)"
+
+# Symbols
+[status]
+format = '[
+
+\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]
+
+]($style)'
+map_symbol = true
+pipestatus = true
+symbol = "🔴"
+
+# AWS
+[aws]
+symbol = " "
+style = "bold blue"
+
+# Conda
+[conda]
+symbol = " "
+style = "bold green"
+
+# Dart
+[dart]
+symbol = " "
+style = "bold cyan"
+
+# Docker context
+[docker_context]
+symbol = " "
+style = "bold blue"
+
+# Elixir
+[elixir]
+symbol = " "
+style = "bold magenta"
+
+# Elm
+[elm]
+symbol = " "
+style = "bold green"
+
+# Git branch
+[git_branch]
+symbol = " "
+style = "bold red"
+
+# Go
+[golang]
+symbol = " "
+style = "bold cyan"
+
+# Hg branch
+[hg_branch]
+symbol = " "
+style = "bold red"
+
+# Java
+[java]
+symbol = " "
+style = "bold purple"
+
+# Julia
+[julia]
+symbol = " "
+style = "bold green"
+
+# Nim
+[nim]
+symbol = " "
+style = "bold yellow"
+
+# Nix shell
+[nix_shell]
+symbol = " "
+style = "bold blue"
+
+# Node.js
+[nodejs]
+symbol = " "
+style = "bold green"
+
+# Package
+[package]
+symbol = " "
+style = "bold yellow"
+
+# Perl
+[perl]
+symbol = " "
+style = "bold blue"
+
+# PHP
+[php]
+symbol = " "
+style = "bold blue"
+
+# Python
+[python]
+symbol = " "
+style = "bold yellow"
+
+# Ruby
+[ruby]
+symbol = " "
+style = "bold red"
+
+# Rust
+[rust]
+symbol = " "
+style = "bold orange"
+
+# Swift
+[swift]
+symbol = "ﯣ "
+style = "bold red"
+
