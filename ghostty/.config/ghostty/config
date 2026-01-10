@@ -1,0 +1,51 @@
+# Theme and Appearance
+background = 000000
+background-opacity = 0.85
+background-blur-radius = 20
+
+font-family = "CodeNewRoman Nerd Font Mono"
+font-size = 22
+
+cursor-style = underline
+cursor-style-blink = false
+
+# Shell Integration / Cursor behavior
+# (Ghostty uses this option name for disabling cursor changes)
+shell-integration-features = no-cursor
+
+# Window Behavior
+confirm-close-surface = false
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
+# Updates
+auto-update = check
+
+# Keybindings
+# Uncomment and adjust if desired.
+keybind = super+i=inspector:toggle
+keybind = super+shift+space=toggle_quick_terminal
+keybind = ctrl+z=close_surface
+keybind = ctrl+d=new_split:right
+keybind = ctrl+e=new_split:down
+
+# Custom Keybindings
+# keybind = super+n=new_tab
+# keybind = super+w=close_tab
+# keybind = ctrl+shift+c=copy_path
+# keybind = ctrl+shift+v=paste_path
+# keybind = ctrl+shift+f=find_in_files
+# keybind = ctrl+p=command_palette
+
+# Comments for Clarity
+# Theme and Appearance settings define how the terminal looks.
+# Window Behavior settings manage window actions and display.
+# Keybindings set shortcuts for commonly used functions.
+# Custom Keybindings add new functionalities to enhance workflow.
+# Comments help to understand the purpose of each setting.
+
+# Place this file in:
+#   ~/.config/ghostty/config
+
