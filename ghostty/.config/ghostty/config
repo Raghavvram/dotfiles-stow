@@ -2,7 +2,7 @@ theme = "12-bit Rainbow"
 
 font-family = "CodeNewRoman Nerd Font"
 
-font-size = 20
+font-size = 17
 
 window-padding-x = 10
 window-padding-y = 10
