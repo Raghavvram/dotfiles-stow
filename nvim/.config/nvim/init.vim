@@ -24,10 +24,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Color schemes
-Plug 'navarasu/onedark.nvim'
-Plug 'rose-pine/neovim'
-Plug 'thedenisnikulin/vim-cyberpunk'
+" Color schemes - FIXED: Catppuccin Mocha
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Git diffs in sign column
 Plug 'airblade/vim-gitgutter'
@@ -38,7 +36,7 @@ Plug 'dense-analysis/ale'
 " Undo history visualizer
 Plug 'mbbill/undotree'
 
-" IntelliSense engine (branch: release)
+" IntelliSense engine (branch: release) - Provides tab completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Treesitter for better syntax highlighting
@@ -69,7 +67,50 @@ set scrolloff=5                 " Keep 5 lines visible when scrolling
 set termguicolors               " Enable true color support
 set showtabline=2               " Always show tabline
 set laststatus=2                " Always show statusline
-colorscheme onedark             " Default colorscheme
+set completeopt=menuone,noinsert,noselect " Better completion menu
+colorscheme catppuccin_mocha    " Catppuccin Mocha theme
+
+"──────────────────────────────────────────────────────────────────────────────
+" CoC (Conquer of Completion) Configuration - TAB Completion (Primary)
+"──────────────────────────────────────────────────────────────────────────────
+" Use tab for trigger completion with characters ahead and navigate
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> to confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" CoC Extensions (install after first run: :CocInstall coc-pyright coc-tsserver coc-json etc.)
+let g:coc_global_extensions = ['coc-pyright', 'coc-tsserver', 'coc-json', 'coc-html', 'coc-css']
 
 "──────────────────────────────────────────────────────────────────────────────
 " NERDTree Configuration
@@ -79,7 +120,7 @@ let g:NERDTreeDirArrowCollapsible   = '~'
 let g:python_highlight_all          = 1
 
 "──────────────────────────────────────────────────────────────────────────────
-" Airline / Lightline Configuration
+" FIXED: Airline Configuration - Use default theme map to Catppuccin
 "──────────────────────────────────────────────────────────────────────────────
 let g:airline_theme                 = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
@@ -152,12 +193,9 @@ tnoremap <C-A-Down>  <C-\><C-n>:resize -5<CR>
 " Neovide Opacity & Full Transparency Setup
 "──────────────────────────────────────────────────────────────────────────────
 if exists('g:neovide')
-  " Window opacity: 0.0 (transparent) to 1.0 (opaque)
   let g:neovide_opacity = 0.6
-
-  " Match background alpha to window opacity
   let g:neovide_background_color =
-        \ '#0f1117' . printf('%02x', float2nr(255 * g:neovide_opacity))
+        \ '#1e1e2e' . printf('%02x', float2nr(255 * g:neovide_opacity))
 endif
 
 " Clear all GUI backgrounds for seamless transparency
@@ -165,4 +203,3 @@ highlight Normal      ctermbg=none guibg=none
 highlight NonText     ctermbg=none guibg=none
 highlight LineNr      ctermbg=none guibg=none
 highlight EndOfBuffer ctermbg=none guibg=none
-
